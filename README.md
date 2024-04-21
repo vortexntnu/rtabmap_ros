@@ -1,7 +1,29 @@
 rtabmap_ros
-===========
+=======
 
-RTAB-Map's ROS2 package (branch `ros2`). **ROS2 Foxy minimum required**: currently most nodes are ported to ROS2, however they are not all tested yet. The interface is the same than on ROS1 (parameters and topic names should still match ROS1 documentation on [rtabmap_ros](http://wiki.ros.org/rtabmap_ros)). 
+# Run with ouster lidar on ASV:
+
+Dependencies:
+```
+sudo apt-get install ros-$ROS_DISTRO-imu-transformer ros-$ROS_DISTRO-imu-filter-madgwick ros-$ROS_DISTRO-rtabmap ros-$ROS_DISTRO-move-base-msgs
+```
+You will also need to clone our lidar driver into the same workspace as this repository:
+
+```
+git clone https://github.com/vortexntnu/ouster-lidar-ros-driver
+```
+
+Once you have built your packages, run rtabmap using
+```
+roslaunch rtabmap_ros test_ouster.launch os1_hostname:=os1-122037000366.local
+```
+if you are using the ASV lidar. Replace the hostname with `os1-122007000043.local` if you are using the backup lidar. If there are any issues, check the launchfile at `launch/tests/test_ouster.launch`
+
+RTAB-Map's ROS package.
+
+For more information, demos and tutorials about this package, visit [rtabmap_ros](http://wiki.ros.org/rtabmap_ros) page on ROS wiki.
+
+For the RTAB-Map libraries and standalone application, visit [RTAB-Map's home page](http://introlab.github.io/rtabmap) or [RTAB-Map's wiki](https://github.com/introlab/rtabmap/wiki).
 
 #### CI Latest
 
