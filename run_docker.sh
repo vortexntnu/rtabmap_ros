@@ -1,0 +1,1 @@
+sudo docker run --runtime nvidia -it --privileged --net host --ipc=host --pid=host -e NVIDIA_DRIVER_CAPABILITIES=all -e DISPLAY   -v /dev:/dev -v /tmp/.X11-unix/:/tmp/.X11-unix --entrypoint /bin/bash ghcr.io/vortexntnu/vortex-asv:rtab_slam_with_zed_amd64
